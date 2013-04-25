@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  card: 
+  initials: MyString
+  note: MyString
+  duration: 1.5
+  completed_at: 2013-04-25
+  tags: MyString
+
+two:
+  card: 
+  initials: MyString
+  note: MyString
+  duration: 1.5
+  completed_at: 2013-04-25
+  tags: MyString

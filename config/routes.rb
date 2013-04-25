@@ -1,4 +1,7 @@
 Timecard::Application.routes.draw do
+  resources :stamps
+
+
   resources :cards
 
 

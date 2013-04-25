@@ -1,0 +1,33 @@
+<h1>Listing stamps</h1>
+
+<table>
+  <tr>
+    <th>Card</th>
+    <th>Initials</th>
+    <th>Note</th>
+    <th>Duration</th>
+    <th>Completed at</th>
+    <th>Tags</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stamps.each do |stamp| %>
+  <tr>
+    <td><%= stamp.card %></td>
+    <td><%= stamp.initials %></td>
+    <td><%= stamp.note %></td>
+    <td><%= stamp.duration %></td>
+    <td><%= stamp.completed_at %></td>
+    <td><%= stamp.tags %></td>
+    <td><%= link_to 'Show', stamp %></td>
+    <td><%= link_to 'Edit', edit_stamp_path(stamp) %></td>
+    <td><%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stamp', new_stamp_path %>

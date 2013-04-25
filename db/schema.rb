@@ -11,11 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425155525) do
+ActiveRecord::Schema.define(:version => 20130425155823) do
 
   create_table "cards", :force => true do |t|
     t.string "name"
     t.float  "rate"
   end
+
+  create_table "stamps", :force => true do |t|
+    t.integer "card_id"
+    t.string  "initials"
+    t.string  "note"
+    t.float   "duration"
+    t.date    "completed_at"
+    t.string  "tags"
+  end
+
+  add_index "stamps", ["card_id"], :name => "index_stamps_on_card_id"
 
 end

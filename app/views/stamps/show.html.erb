@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Card:</b>
+  <%= @stamp.card %>
+</p>
+
+<p>
+  <b>Initials:</b>
+  <%= @stamp.initials %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @stamp.note %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @stamp.duration %>
+</p>
+
+<p>
+  <b>Completed at:</b>
+  <%= @stamp.completed_at %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @stamp.tags %>
+</p>
+
+
+<%= link_to 'Edit', edit_stamp_path(@stamp) %> |
+<%= link_to 'Back', stamps_path %>
