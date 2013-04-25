@@ -1,33 +1,44 @@
-<h1>Listing stamps</h1>
-
-<table>
-  <tr>
-    <th>Card</th>
-    <th>Initials</th>
-    <th>Note</th>
-    <th>Duration</th>
-    <th>Completed at</th>
-    <th>Tags</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @stamps.each do |stamp| %>
-  <tr>
-    <td><%= stamp.card %></td>
-    <td><%= stamp.initials %></td>
-    <td><%= stamp.note %></td>
-    <td><%= stamp.duration %></td>
-    <td><%= stamp.completed_at %></td>
-    <td><%= stamp.tags %></td>
-    <td><%= link_to 'Show', stamp %></td>
-    <td><%= link_to 'Edit', edit_stamp_path(stamp) %></td>
-    <td><%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Stamp -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:card_id) %></th>
+      <th><%= model_class.human_attribute_name(:initials) %></th>
+      <th><%= model_class.human_attribute_name(:note) %></th>
+      <th><%= model_class.human_attribute_name(:duration) %></th>
+      <th><%= model_class.human_attribute_name(:completed_at) %></th>
+      <th><%= model_class.human_attribute_name(:tags) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stamps.each do |stamp| %>
+      <tr>
+        <td><%= link_to stamp.id, stamp_path(stamp) %></td>
+        <td><%= stamp.card_id %></td>
+        <td><%= stamp.initials %></td>
+        <td><%= stamp.note %></td>
+        <td><%= stamp.duration %></td>
+        <td><%= stamp.completed_at %></td>
+        <td><%= stamp.tags %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_stamp_path(stamp), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      stamp_path(stamp),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Stamp', new_stamp_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_stamp_path,
+            :class => 'btn btn-primary' %>
