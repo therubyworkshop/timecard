@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:card_id) %></th>
       <th><%= model_class.human_attribute_name(:initials) %></th>
       <th><%= model_class.human_attribute_name(:note) %></th>
@@ -18,7 +17,6 @@
   <tbody>
     <% @stamps.each do |stamp| %>
       <tr>
-        <td><%= link_to stamp.id, stamp_path(stamp) %></td>
         <td><%= stamp.card_id %></td>
         <td><%= stamp.initials %></td>
         <td><%= stamp.note %></td>
@@ -26,8 +24,6 @@
         <td><%= stamp.completed_at %></td>
         <td><%= stamp.tags %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_stamp_path(stamp), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       stamp_path(stamp),
                       :method => :delete,
@@ -38,7 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_stamp_path,
-            :class => 'btn btn-primary' %>

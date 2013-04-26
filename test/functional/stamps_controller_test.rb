@@ -11,31 +11,11 @@ class StampsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:stamps)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create stamp" do
     assert_difference('Stamp.count') do
       post :create, stamp: { completed_at: @stamp.completed_at, duration: @stamp.duration, initials: @stamp.initials, note: @stamp.note, tags: @stamp.tags }
     end
 
-    assert_redirected_to stamp_path(assigns(:stamp))
-  end
-
-  test "should show stamp" do
-    get :show, id: @stamp
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @stamp
-    assert_response :success
-  end
-
-  test "should update stamp" do
-    put :update, id: @stamp, stamp: { completed_at: @stamp.completed_at, duration: @stamp.duration, initials: @stamp.initials, note: @stamp.note, tags: @stamp.tags }
     assert_redirected_to stamp_path(assigns(:stamp))
   end
 
