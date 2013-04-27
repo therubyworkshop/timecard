@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+gem install bundler
+bundle
+
+rake db:setup db:seed db:test:prepare
+
+echo "Done. Run tests with:"
+echo "$ rake"
