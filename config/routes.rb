@@ -1,7 +1,7 @@
 Timecard::Application.routes.draw do
 
   resources :cards
-  resources :stamps, only: [:index, :create, :destroy]
+  resources :stamps, only: [:create, :destroy]
   root :to => 'cards#index'
 
 

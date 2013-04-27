@@ -1,17 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  card: 
-  initials: MyString
-  note: MyString
-  duration: 1.5
+microsoft_hacking:
+  card: microsoft
+  initials: BG
+  note: Just hackin
+  duration: 11235
   completed_at: 2013-04-25
-  tags: MyString
+  tags: dotnet
 
-two:
-  card: 
-  initials: MyString
-  note: MyString
-  duration: 1.5
+apple_ux:
+  card: apple
+  initials: SJ
+  note: Sexy stuff
+  duration: 111
   completed_at: 2013-04-25
-  tags: MyString
+  tags: cocoa
+
+intel_design:
+  card: intel
+  initials: RN
+  note: Chip design
+  duration: 64
+  completed_at: 2013-04-25
+  tags: bit width
