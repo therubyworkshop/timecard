@@ -14,6 +14,13 @@ class ManageCardsTest < ActionDispatch::IntegrationTest
     assert page.has_content? "Bacon"
   end
 
+  test "creating a card with missing field" do
+    click_link "New Card"
+    fill_in "Name", with: ""
+    click_button "Save Card"
+    assert page.has_content? "can't be blank"
+  end
+
   test "edit a card" do
     within "tr#card_#{@card.id}"do
       click_link "Edit"

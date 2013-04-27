@@ -18,7 +18,7 @@ class CardsControllerTest < ActionController::TestCase
 
   test "should create card" do
     assert_difference('Card.count') do
-      post :create, card: { name: @card.name, rate: @card.rate }
+      post :create, card: { name: "HP", rate: 0.99 }
     end
 
     assert_redirected_to cards_path

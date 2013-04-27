@@ -9,3 +9,7 @@
 th label {
   font-weight: bold;
 }
+
+div.field_with_errors {
+  display: inline;
+}
