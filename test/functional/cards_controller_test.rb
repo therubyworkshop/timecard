@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CardsControllerTest < ActionController::TestCase
   setup do
-    @card = cards(:one)
+    @card = cards(:microsoft)
   end
 
   test "should get index" do
@@ -21,7 +21,7 @@ class CardsControllerTest < ActionController::TestCase
       post :create, card: { name: @card.name, rate: @card.rate }
     end
 
-    assert_redirected_to card_path(assigns(:card))
+    assert_redirected_to cards_path
   end
 
   test "should show card" do
@@ -36,7 +36,7 @@ class CardsControllerTest < ActionController::TestCase
 
   test "should update card" do
     put :update, id: @card, card: { name: @card.name, rate: @card.rate }
-    assert_redirected_to card_path(assigns(:card))
+    assert_redirected_to cards_path
   end
 
   test "should destroy card" do

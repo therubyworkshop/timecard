@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  rate: 1.5
+microsoft:
+  name: Microsoft
+  rate: 123
 
-two:
-  name: MyString
-  rate: 1.5
+apple:
+  name: Apple
+  rate: 321
+
+intel:
+  name: Intel
+  rate: 3.14

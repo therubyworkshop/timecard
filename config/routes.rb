@@ -2,6 +2,7 @@ Timecard::Application.routes.draw do
 
   resources :cards
   resources :stamps, only: [:index, :create, :destroy]
+  root :to => 'cards#index'
 
 
   # The priority is based upon order of creation:
