@@ -8,18 +8,18 @@ class StampTest < ActiveSupport::TestCase
   end
 
   test "has error on initials when blank" do
-    assert_include @error_messages[:initials], "can't be blank"
+    assert_includes @error_messages[:initials], "can't be blank"
   end
 
   test "has error on duration when blank" do
-    assert_include @error_messages[:duration], "can't be blank"
+    assert_includes @error_messages[:duration], "can't be blank"
   end
 
   test "has error on completed_at when blank" do
-    assert_include @error_messages[:completed_at], "can't be blank"
+    assert_includes @error_messages[:completed_at], "can't be blank"
   end
 
   test "has error on card_id when blank" do
-    assert_include @error_messages[:card_id], "can't be blank"
+    assert_includes @error_messages[:card_id], "can't be blank"
   end
 end
