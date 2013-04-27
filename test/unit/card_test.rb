@@ -31,4 +31,9 @@ class CardTest < ActiveSupport::TestCase
     total_duration = stamps(:microsoft_hacking).duration + stamps(:microsoft_bug_fixin).duration
     assert_equal total_duration * card.rate, card.total_cost
   end
+
+  test "has grand_total_duration for all cards" do
+    # TODO #3
+    # assert_equal <some expected here>, Card.grand_total_duration
+  end
 end
