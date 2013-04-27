@@ -36,4 +36,9 @@ class CardTest < ActiveSupport::TestCase
     # TODO #3
     # assert_equal <some expected here>, Card.grand_total_duration
   end
+
+  test "has grand_total_cost for all cards" do
+    # TODO #4
+    # assert_equal <some expected here>, Card.grand_total_duration
+  end
 end

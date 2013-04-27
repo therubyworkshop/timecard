@@ -15,6 +15,10 @@ class Card < ActiveRecord::Base
     grand_total_duration
   end
 
+  def self.grand_total_cost
+    # TODO #4
+  end
+
   def total_cost
     self.total_duration * self.rate
   end
