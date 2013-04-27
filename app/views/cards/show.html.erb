@@ -11,8 +11,9 @@
   </div>
 </div>
 
-<%= form_for Stamp.new(card_id: @card.id) do |f| %>
+<%= form_for @stamp do |f| %>
   <%= f.hidden_field :card_id %>
+  <%= f.error_messages %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -26,13 +27,13 @@
     </thead>
     <tbody>
       <%= content_tag_for(:tr, f.object, class: "info") do %>
-        <td><%= f.text_field :initials, class: 'text_field span1' %></td>
+        <td><%= f.text_field :initials, class: 'text_field span1', required: true %></td>
         <td><%= f.text_field :note,     class: 'text_field span2' %></td>
-        <td><%= f.text_field :duration, class: 'text_field span1' %></td>
+        <td><%= f.text_field :duration, class: 'text_field span1', required: true %></td>
         <td>
           <%= f.date_select :completed_at,
             { use_short_month: true, order: [:day, :month, :year] },
-            { class: 'date_select span1'} %>
+            { class: 'date_select span1', required: true } %>
         </td>
         <td><%= f.text_field :tags,     class: 'text_field span2' %></td>
         <td><%= f.submit "Save Stamp",  class: 'btn btn-primary' %></td>

@@ -26,6 +26,7 @@ class CardsControllerTest < ActionController::TestCase
 
   test "should show card" do
     get :show, id: @card
+    assert_not_nil assigns(:stamp)
     assert_response :success
   end
 

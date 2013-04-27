@@ -16,6 +16,12 @@ class ManageStampsTest < ActionDispatch::IntegrationTest
     assert page.has_content? "Siri"
   end
 
+  test "creating a stamp with missing field" do
+    fill_in "Initials", with: ""
+    click_button "Save Stamp"
+    assert page.has_content? "Error(s) prohibited this stamp from being saved"
+  end
+
   test "delete a stamp" do
     assert page.has_content? @stamp.note
     within "tr#stamp_#{@stamp.id}"do

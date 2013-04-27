@@ -5,6 +5,7 @@ class CardsController < ApplicationController
 
   def show
     @card = Card.find(params[:id])
+    @stamp = Stamp.new card_id: @card.id
     add_breadcrumb "Cards", cards_path
     add_breadcrumb @card.name, card_path(@card)
   end
