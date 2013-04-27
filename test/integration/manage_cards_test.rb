@@ -33,4 +33,13 @@ class ManageCardsTest < ActionDispatch::IntegrationTest
     end
     assert page.has_no_content? "Intel"
   end
+
+  test "returning to card list from edit" do
+    within "tr#card_#{@card.id}"do
+      click_link "Edit"
+    end
+    click_link "Cards"
+    assert page.has_content? cards(:microsoft).name
+    assert page.has_content? cards(:apple).name
+  end
 end

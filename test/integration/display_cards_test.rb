@@ -17,4 +17,11 @@ class DisplayCardsTest < ActionDispatch::IntegrationTest
     assert page.has_content? card.name
     assert page.has_content? card.rate.round
   end
+
+  test "returning to card list from detail" do
+    click_link cards(:intel).name
+    click_link "Cards"
+    assert page.has_content? cards(:microsoft).name
+    assert page.has_content? cards(:apple).name
+  end
 end
