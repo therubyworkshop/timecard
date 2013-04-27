@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'twitter-bootstrap-rails'
-gem 'capybara'
+gem 'capybara', '~> 2.0.3'
 gem 'dynamic_form'
 
 # Gems used only for assets and not required
