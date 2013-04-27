@@ -19,6 +19,10 @@ class DisplayCardsTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "listing cards includes total cost per card" do
+    # TODO #2
+  end
+
   test "viewing card detail" do
     card = cards(:intel)
     click_link card.name

@@ -4,6 +4,7 @@
       <th>Name</th>
       <th>Total Duration</th>
       <th>Rate</th>
+      <th>Total Cost</th>
       <th>
         <%= link_to "New Card", new_card_path, class: 'btn btn-primary' %>
       </th>
@@ -15,6 +16,7 @@
         <td><%= link_to card.name, card_path(card) %></td>
         <td><%= number_with_precision card.total_duration, precision: 2 %></td>
         <td><%= card.rate %></td>
+        <td><%# TODO #2 %></td>
         <td>
           <%= link_to "Edit", edit_card_path(card), :class => 'btn btn-mini' %>
           <%= link_to "Delete", card_path(card),
