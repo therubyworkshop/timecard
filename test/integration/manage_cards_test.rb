@@ -21,6 +21,10 @@ class ManageCardsTest < ActionDispatch::IntegrationTest
     assert page.has_content? "can't be blank"
   end
 
+  test "creating a card with duplicate name" do
+    # TODO #1
+  end
+
   test "edit a card" do
     within "tr#card_#{@card.id}"do
       click_link "Edit"
