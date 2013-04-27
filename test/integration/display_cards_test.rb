@@ -11,6 +11,14 @@ class DisplayCardsTest < ActionDispatch::IntegrationTest
     assert page.has_content? cards(:intel).name
   end
 
+  test "listing cards includes total hours per card" do
+    card = cards(:microsoft)
+    total_duration = stamps(:microsoft_hacking).duration + stamps(:microsoft_bug_fixin).duration
+    within "tr#card_#{card.id}"do
+      assert page.has_content? total_duration.round(2)
+    end
+  end
+
   test "viewing card detail" do
     card = cards(:intel)
     click_link card.name

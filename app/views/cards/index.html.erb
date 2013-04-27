@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Total Duration</th>
       <th>Rate</th>
       <th>
         <%= link_to "New Card", new_card_path, class: 'btn btn-primary' %>
@@ -12,6 +13,7 @@
     <% @cards.each do |card| %>
       <%= content_tag_for(:tr, card) do %>
         <td><%= link_to card.name, card_path(card) %></td>
+        <td><%= number_with_precision card.total_duration, precision: 2 %></td>
         <td><%= card.rate %></td>
         <td>
           <%= link_to "Edit", edit_card_path(card), :class => 'btn btn-mini' %>

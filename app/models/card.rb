@@ -3,4 +3,8 @@ class Card < ActiveRecord::Base
   has_many :stamps
   validates_presence_of :name, :rate
   validates_uniqueness_of :name
+
+  def total_duration
+    self.stamps.sum(:duration)
+  end
 end

@@ -4,7 +4,15 @@ microsoft_hacking:
   card: microsoft
   initials: BG
   note: Just hackin
-  duration: 11235
+  duration: 1.1235
+  completed_at: 2013-04-25
+  tags: dotnet
+
+microsoft_bug_fixin:
+  card: microsoft
+  initials: BG
+  note: Fixin stuff
+  duration: 9.9999
   completed_at: 2013-04-25
   tags: dotnet
 
@@ -12,7 +20,7 @@ apple_ux:
   card: apple
   initials: SJ
   note: Sexy stuff
-  duration: 111
+  duration: 1.11
   completed_at: 2013-04-25
   tags: cocoa
 

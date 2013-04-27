@@ -2,11 +2,11 @@
 
 microsoft:
   name: Microsoft
-  rate: 123
+  rate: 12.3
 
 apple:
   name: Apple
-  rate: 321
+  rate: 32.1
 
 intel:
   name: Intel
